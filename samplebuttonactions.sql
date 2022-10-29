@@ -2,7 +2,13 @@
 INSERT INTO user VALUES
 (NULL, first_name, last_name, store_location, admin_id, password);
 
+-- check login credentials
+SELECT password, email
+FROM user
+
 -- update user password
+SELECT password
+FROM user
 UPDATE user
 SET password=password
 
