@@ -14,7 +14,7 @@ CREATE TABLE `user` (
   `user_id` mediumint unsigned NOT NULL auto_increment,
   `first_name` varchar(255) default NULL,
   `last_name` varchar(255) default NULL,
-  `name` varchar(255) default NULL,
+  `email` varchar(255) default NULL,
   `password` varchar(255),
   `isadmin` varchar(255) default NULL,
   `store_location` varchar(50) default NULL,
