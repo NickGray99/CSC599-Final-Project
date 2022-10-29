@@ -1,0 +1,608 @@
+DROP TABLE IF EXISTS `response_history`;
+
+CREATE TABLE `response_history` (
+  `response_history_id` mediumint unsigned NOT NULL auto_increment,
+  `user_id` mediumint default NULL,
+  PRIMARY KEY (`response_history_id`)
+) AUTO_INCREMENT=1;
+
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (1,164),
+  (2,307),
+  (3,152),
+  (4,13),
+  (5,130),
+  (6,403),
+  (7,109),
+  (8,283),
+  (9,442),
+  (10,28);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (11,451),
+  (12,152),
+  (13,324),
+  (14,277),
+  (15,495),
+  (16,272),
+  (17,210),
+  (18,109),
+  (19,20),
+  (20,113);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (21,214),
+  (22,401),
+  (23,135),
+  (24,272),
+  (25,292),
+  (26,308),
+  (27,187),
+  (28,486),
+  (29,133),
+  (30,54);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (31,287),
+  (32,227),
+  (33,94),
+  (34,294),
+  (35,307),
+  (36,137),
+  (37,173),
+  (38,115),
+  (39,146),
+  (40,272);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (41,316),
+  (42,425),
+  (43,172),
+  (44,368),
+  (45,107),
+  (46,260),
+  (47,310),
+  (48,429),
+  (49,382),
+  (50,109);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (51,333),
+  (52,483),
+  (53,226),
+  (54,423),
+  (55,289),
+  (56,331),
+  (57,439),
+  (58,29),
+  (59,173),
+  (60,386);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (61,151),
+  (62,439),
+  (63,137),
+  (64,150),
+  (65,224),
+  (66,186),
+  (67,66),
+  (68,208),
+  (69,478),
+  (70,328);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (71,347),
+  (72,27),
+  (73,412),
+  (74,307),
+  (75,99),
+  (76,382),
+  (77,403),
+  (78,342),
+  (79,254),
+  (80,485);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (81,385),
+  (82,324),
+  (83,360),
+  (84,166),
+  (85,310),
+  (86,113),
+  (87,365),
+  (88,487),
+  (89,223),
+  (90,491);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (91,14),
+  (92,333),
+  (93,104),
+  (94,457),
+  (95,444),
+  (96,386),
+  (97,402),
+  (98,304),
+  (99,221),
+  (100,454);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (101,475),
+  (102,350),
+  (103,173),
+  (104,312),
+  (105,86),
+  (106,135),
+  (107,318),
+  (108,102),
+  (109,63),
+  (110,110);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (111,35),
+  (112,363),
+  (113,155),
+  (114,134),
+  (115,487),
+  (116,344),
+  (117,219),
+  (118,434),
+  (119,9),
+  (120,362);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (121,78),
+  (122,359),
+  (123,144),
+  (124,139),
+  (125,343),
+  (126,339),
+  (127,272),
+  (128,116),
+  (129,328),
+  (130,278);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (131,256),
+  (132,31),
+  (133,167),
+  (134,480),
+  (135,348),
+  (136,41),
+  (137,3),
+  (138,324),
+  (139,229),
+  (140,157);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (141,226),
+  (142,491),
+  (143,199),
+  (144,353),
+  (145,432),
+  (146,214),
+  (147,54),
+  (148,88),
+  (149,209),
+  (150,457);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (151,242),
+  (152,300),
+  (153,107),
+  (154,15),
+  (155,61),
+  (156,139),
+  (157,178),
+  (158,300),
+  (159,227),
+  (160,260);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (161,449),
+  (162,189),
+  (163,201),
+  (164,37),
+  (165,487),
+  (166,477),
+  (167,424),
+  (168,121),
+  (169,320),
+  (170,416);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (171,2),
+  (172,336),
+  (173,239),
+  (174,231),
+  (175,385),
+  (176,96),
+  (177,355),
+  (178,209),
+  (179,44),
+  (180,377);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (181,98),
+  (182,152),
+  (183,107),
+  (184,36),
+  (185,252),
+  (186,129),
+  (187,393),
+  (188,436),
+  (189,36),
+  (190,294);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (191,6),
+  (192,192),
+  (193,431),
+  (194,457),
+  (195,354),
+  (196,87),
+  (197,117),
+  (198,93),
+  (199,427),
+  (200,93);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (201,334),
+  (202,39),
+  (203,10),
+  (204,343),
+  (205,311),
+  (206,191),
+  (207,179),
+  (208,274),
+  (209,269),
+  (210,62);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (211,477),
+  (212,13),
+  (213,202),
+  (214,314),
+  (215,250),
+  (216,221),
+  (217,363),
+  (218,72),
+  (219,434),
+  (220,207);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (221,452),
+  (222,410),
+  (223,111),
+  (224,124),
+  (225,300),
+  (226,73),
+  (227,426),
+  (228,366),
+  (229,194),
+  (230,265);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (231,349),
+  (232,488),
+  (233,242),
+  (234,314),
+  (235,209),
+  (236,447),
+  (237,135),
+  (238,183),
+  (239,399),
+  (240,432);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (241,310),
+  (242,42),
+  (243,361),
+  (244,364),
+  (245,363),
+  (246,190),
+  (247,262),
+  (248,114),
+  (249,257),
+  (250,255);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (251,327),
+  (252,224),
+  (253,486),
+  (254,32),
+  (255,253),
+  (256,305),
+  (257,276),
+  (258,22),
+  (259,484),
+  (260,479);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (261,442),
+  (262,190),
+  (263,127),
+  (264,62),
+  (265,450),
+  (266,270),
+  (267,53),
+  (268,439),
+  (269,256),
+  (270,353);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (271,358),
+  (272,106),
+  (273,26),
+  (274,182),
+  (275,105),
+  (276,182),
+  (277,104),
+  (278,215),
+  (279,210),
+  (280,427);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (281,417),
+  (282,119),
+  (283,315),
+  (284,412),
+  (285,80),
+  (286,260),
+  (287,119),
+  (288,13),
+  (289,345),
+  (290,449);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (291,189),
+  (292,497),
+  (293,197),
+  (294,147),
+  (295,291),
+  (296,211),
+  (297,370),
+  (298,305),
+  (299,375),
+  (300,69);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (301,258),
+  (302,231),
+  (303,298),
+  (304,179),
+  (305,425),
+  (306,345),
+  (307,396),
+  (308,325),
+  (309,98),
+  (310,359);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (311,245),
+  (312,82),
+  (313,148),
+  (314,308),
+  (315,216),
+  (316,311),
+  (317,59),
+  (318,431),
+  (319,458),
+  (320,356);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (321,210),
+  (322,125),
+  (323,137),
+  (324,164),
+  (325,65),
+  (326,486),
+  (327,28),
+  (328,431),
+  (329,151),
+  (330,277);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (331,471),
+  (332,105),
+  (333,197),
+  (334,59),
+  (335,227),
+  (336,479),
+  (337,438),
+  (338,477),
+  (339,317),
+  (340,193);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (341,40),
+  (342,338),
+  (343,358),
+  (344,411),
+  (345,478),
+  (346,23),
+  (347,35),
+  (348,461),
+  (349,352),
+  (350,417);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (351,274),
+  (352,478),
+  (353,384),
+  (354,32),
+  (355,473),
+  (356,181),
+  (357,423),
+  (358,478),
+  (359,221),
+  (360,255);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (361,28),
+  (362,384),
+  (363,109),
+  (364,461),
+  (365,266),
+  (366,159),
+  (367,77),
+  (368,251),
+  (369,321),
+  (370,263);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (371,6),
+  (372,23),
+  (373,106),
+  (374,244),
+  (375,166),
+  (376,412),
+  (377,51),
+  (378,36),
+  (379,448),
+  (380,483);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (381,389),
+  (382,374),
+  (383,452),
+  (384,254),
+  (385,105),
+  (386,415),
+  (387,454),
+  (388,117),
+  (389,155),
+  (390,481);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (391,211),
+  (392,398),
+  (393,491),
+  (394,8),
+  (395,487),
+  (396,71),
+  (397,137),
+  (398,64),
+  (399,434),
+  (400,401);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (401,157),
+  (402,49),
+  (403,157),
+  (404,108),
+  (405,14),
+  (406,38),
+  (407,131),
+  (408,196),
+  (409,478),
+  (410,358);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (411,57),
+  (412,154),
+  (413,295),
+  (414,254),
+  (415,174),
+  (416,240),
+  (417,352),
+  (418,113),
+  (419,63),
+  (420,487);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (421,180),
+  (422,112),
+  (423,130),
+  (424,250),
+  (425,124),
+  (426,496),
+  (427,7),
+  (428,403),
+  (429,175),
+  (430,380);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (431,486),
+  (432,195),
+  (433,6),
+  (434,239),
+  (435,460),
+  (436,106),
+  (437,136),
+  (438,344),
+  (439,480),
+  (440,238);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (441,444),
+  (442,271),
+  (443,131),
+  (444,270),
+  (445,352),
+  (446,283),
+  (447,244),
+  (448,223),
+  (449,59),
+  (450,209);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (451,93),
+  (452,423),
+  (453,26),
+  (454,375),
+  (455,105),
+  (456,78),
+  (457,303),
+  (458,187),
+  (459,354),
+  (460,285);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (461,176),
+  (462,88),
+  (463,186),
+  (464,153),
+  (465,23),
+  (466,209),
+  (467,92),
+  (468,79),
+  (469,314),
+  (470,45);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (471,111),
+  (472,393),
+  (473,291),
+  (474,142),
+  (475,485),
+  (476,214),
+  (477,111),
+  (478,440),
+  (479,4),
+  (480,255);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (481,45),
+  (482,60),
+  (483,441),
+  (484,454),
+  (485,430),
+  (486,240),
+  (487,147),
+  (488,352),
+  (489,336),
+  (490,226);
+INSERT INTO `response_history` (`response_history_id`,`user_id`)
+VALUES
+  (491,154),
+  (492,268),
+  (493,451),
+  (494,68),
+  (495,154),
+  (496,10),
+  (497,429),
+  (498,270),
+  (499,55),
+  (500,126);
