@@ -10,24 +10,54 @@
 		<script src="mainPage.js"></script>
 	</head>
 
-<body>
 	<div class="header">
  		<h1>Prompts</h1>
-	</div>
+	</div>	  
+	<body>
+		<h1>Monthly Questionaire</h1>
+	  
+		<form id="form">
 
-	<div id="navbar">
-  		<a href="HomePage.html">Home</a>
-  		<a href="AccountPage.html">Account</a>
-		<a href="History.html">History</a>
-		<a href="Prompts.html">Prompts</a>
-	</div>
+			<!-- Question 1 -->
+			<div class="form-control">
+				<label for="question1" id="question1">
+					Question 1: 
+				</label>
+
+				<textarea name="question1" id="question1"
+					placeholder="Enter your answer here...">
+				</textarea>
+			</div>
+	  
+
+			<!-- Input Type Question 2-->
+			<div class="form-control">
+				<label for="question2" id="question2">
+					Question 2:
+				</label>
+	 
+				<textarea name="question2" id="question3"
+				placeholder="Enter your answer here...">
+			</textarea>
+			</div>
+
+			<!-- Input Type Question 3 -->
+			<div class="form-control">
+				<label for="question3" id="question3">
+					Question 3:
+				</label>
+	 
+				<textarea name="question3" id="question3"
+				placeholder="Enter your answer here...">
+			</textarea>
+			</div>
+	  
+			<!-- Submit button -->
+			<button type="submit" value="submit">
+				Submit
+			</button>
+		</form>
 	
-	<input type="text"> </input>
-
-
-
-
-
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
 	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
