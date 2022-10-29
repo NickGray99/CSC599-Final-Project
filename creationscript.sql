@@ -62,7 +62,8 @@ CREATE TABLE response_status(
     admin_id INT NOT NULL,
     user_id INT NOT NULL,
     response_history_id INT NOT NULL,
-    PRIMARY KEY(responses_status_id),	FOREIGN KEY (user_id)
+    PRIMARY KEY(responses_status_id),	
+    FOREIGN KEY (user_id)
 		REFERENCES user (user_id),
 	FOREIGN KEY(admin_id)
 		REFERENCES admin (admin_id),

@@ -1,0 +1,609 @@
+DROP TABLE IF EXISTS `prompt_responses`;
+
+CREATE TABLE `prompt_responses` (
+  `id` mediumint(8) unsigned NOT NULL auto_increment,
+  `prompt_id` mediumint default NULL,
+  `responses_id` mediumint default NULL,
+    PRIMARY KEY(id)
+) AUTO_INCREMENT=1;
+
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (181,335),
+  (261,430),
+  (321,393),
+  (289,159),
+  (74,388),
+  (348,15),
+  (483,182),
+  (39,384),
+  (267,380),
+  (122,373);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (86,451),
+  (279,262),
+  (353,214),
+  (351,339),
+  (396,286),
+  (9,106),
+  (81,205),
+  (100,120),
+  (353,457),
+  (464,234);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (270,186),
+  (431,375),
+  (483,485),
+  (334,114),
+  (308,261),
+  (455,309),
+  (205,225),
+  (277,467),
+  (377,166),
+  (207,344);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (131,440),
+  (327,323),
+  (6,27),
+  (365,150),
+  (33,98),
+  (348,375),
+  (12,103),
+  (485,477),
+  (43,222),
+  (454,490);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (413,368),
+  (455,59),
+  (423,360),
+  (214,490),
+  (20,233),
+  (249,350),
+  (445,85),
+  (309,178),
+  (166,310),
+  (90,484);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (310,106),
+  (170,269),
+  (86,224),
+  (446,15),
+  (33,267),
+  (453,218),
+  (390,60),
+  (95,404),
+  (414,203),
+  (491,126);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (100,478),
+  (316,467),
+  (429,95),
+  (311,200),
+  (305,86),
+  (90,416),
+  (197,163),
+  (492,276),
+  (485,382),
+  (455,314);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (450,47),
+  (67,262),
+  (151,490),
+  (207,461),
+  (424,154),
+  (267,453),
+  (206,160),
+  (339,212),
+  (454,401),
+  (201,329);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (281,372),
+  (272,446),
+  (177,196),
+  (465,186),
+  (376,217),
+  (408,149),
+  (138,271),
+  (97,115),
+  (46,197),
+  (224,36);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (265,281),
+  (256,408),
+  (87,491),
+  (243,104),
+  (329,210),
+  (169,411),
+  (5,381),
+  (283,7),
+  (131,193),
+  (298,73);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (183,335),
+  (249,251),
+  (240,9),
+  (338,50),
+  (329,148),
+  (442,391),
+  (419,388),
+  (286,425),
+  (349,115),
+  (489,20);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (284,355),
+  (473,495),
+  (65,31),
+  (478,173),
+  (223,30),
+  (31,369),
+  (400,451),
+  (442,111),
+  (148,125),
+  (377,147);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (55,447),
+  (56,120),
+  (170,57),
+  (144,245),
+  (153,193),
+  (353,90),
+  (277,411),
+  (405,333),
+  (51,315),
+  (176,221);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (465,497),
+  (178,466),
+  (129,51),
+  (274,141),
+  (317,439),
+  (429,59),
+  (50,470),
+  (27,390),
+  (388,169),
+  (458,374);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (442,456),
+  (480,450),
+  (288,88),
+  (293,493),
+  (487,105),
+  (177,287),
+  (153,411),
+  (70,496),
+  (360,146),
+  (102,67);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (193,236),
+  (124,172),
+  (113,27),
+  (322,364),
+  (255,302),
+  (330,371),
+  (184,278),
+  (446,328),
+  (98,1),
+  (17,455);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (57,452),
+  (86,440),
+  (212,417),
+  (129,402),
+  (194,342),
+  (291,142),
+  (151,471),
+  (482,148),
+  (108,250),
+  (204,352);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (380,354),
+  (475,81),
+  (296,280),
+  (327,224),
+  (457,83),
+  (297,165),
+  (390,192),
+  (305,38),
+  (322,346),
+  (5,146);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (396,158),
+  (189,320),
+  (110,168),
+  (127,343),
+  (1,98),
+  (393,325),
+  (309,368),
+  (44,467),
+  (41,428),
+  (281,93);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (141,101),
+  (13,471),
+  (104,10),
+  (202,208),
+  (222,134),
+  (97,136),
+  (75,173),
+  (403,85),
+  (387,435),
+  (33,218);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (347,307),
+  (383,178),
+  (307,231),
+  (360,97),
+  (101,37),
+  (15,267),
+  (463,14),
+  (105,403),
+  (281,363),
+  (249,225);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (8,118),
+  (14,450),
+  (49,186),
+  (497,60),
+  (329,340),
+  (407,227),
+  (413,69),
+  (465,385),
+  (401,127),
+  (83,35);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (335,338),
+  (377,348),
+  (322,488),
+  (442,443),
+  (155,284),
+  (167,339),
+  (386,65),
+  (26,33),
+  (482,107),
+  (273,160);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (123,249),
+  (140,88),
+  (486,443),
+  (392,135),
+  (238,29),
+  (358,432),
+  (223,453),
+  (400,125),
+  (389,256),
+  (153,107);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (12,90),
+  (473,391),
+  (307,234),
+  (398,312),
+  (240,208),
+  (230,499),
+  (301,424),
+  (94,400),
+  (338,274),
+  (167,112);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (384,161),
+  (96,387),
+  (220,37),
+  (157,407),
+  (353,137),
+  (284,52),
+  (130,130),
+  (30,437),
+  (100,457),
+  (426,402);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (363,339),
+  (7,149),
+  (385,281),
+  (420,216),
+  (42,429),
+  (3,236),
+  (91,316),
+  (227,274),
+  (163,315),
+  (50,301);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (352,451),
+  (73,180),
+  (482,316),
+  (7,60),
+  (105,146),
+  (66,360),
+  (294,288),
+  (161,74),
+  (144,484),
+  (334,425);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (160,499),
+  (475,26),
+  (169,115),
+  (290,369),
+  (483,80),
+  (162,462),
+  (131,26),
+  (436,68),
+  (268,290),
+  (34,214);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (212,100),
+  (270,5),
+  (379,54),
+  (231,51),
+  (147,463),
+  (14,400),
+  (30,238),
+  (202,416),
+  (66,75),
+  (367,421);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (404,91),
+  (361,65),
+  (173,496),
+  (175,21),
+  (132,126),
+  (464,345),
+  (274,230),
+  (128,258),
+  (465,485),
+  (297,238);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (245,310),
+  (16,404),
+  (433,316),
+  (78,112),
+  (342,100),
+  (394,5),
+  (385,415),
+  (302,194),
+  (293,396),
+  (361,263);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (353,417),
+  (318,171),
+  (270,452),
+  (171,355),
+  (444,156),
+  (482,64),
+  (57,36),
+  (1,177),
+  (250,182),
+  (93,354);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (210,116),
+  (251,7),
+  (36,341),
+  (125,165),
+  (404,342),
+  (396,282),
+  (125,58),
+  (348,492),
+  (40,475),
+  (90,109);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (436,15),
+  (99,313),
+  (184,302),
+  (164,407),
+  (213,254),
+  (82,465),
+  (218,94),
+  (262,3),
+  (107,359),
+  (62,441);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (419,330),
+  (320,316),
+  (425,499),
+  (287,49),
+  (210,44),
+  (444,380),
+  (152,156),
+  (121,371),
+  (178,7),
+  (212,482);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (157,15),
+  (24,475),
+  (151,221),
+  (195,424),
+  (38,477),
+  (482,196),
+  (265,343),
+  (253,135),
+  (162,314),
+  (359,492);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (374,20),
+  (282,84),
+  (101,320),
+  (125,61),
+  (57,17),
+  (105,123),
+  (208,135),
+  (116,153),
+  (87,39),
+  (351,359);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (286,195),
+  (80,82),
+  (361,281),
+  (211,162),
+  (261,415),
+  (14,366),
+  (211,200),
+  (145,225),
+  (276,322),
+  (395,253);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (103,494),
+  (234,214),
+  (189,152),
+  (422,245),
+  (178,422),
+  (211,431),
+  (305,441),
+  (437,445),
+  (201,381),
+  (152,19);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (414,373),
+  (83,483),
+  (163,270),
+  (356,167),
+  (235,494),
+  (409,384),
+  (56,125),
+  (394,380),
+  (209,349),
+  (226,495);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (241,149),
+  (241,189),
+  (192,76),
+  (116,251),
+  (299,70),
+  (395,105),
+  (480,303),
+  (301,375),
+  (66,265),
+  (457,94);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (404,460),
+  (61,21),
+  (189,255),
+  (437,264),
+  (149,391),
+  (21,305),
+  (139,217),
+  (89,169),
+  (497,86),
+  (231,258);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (391,69),
+  (364,310),
+  (322,25),
+  (372,67),
+  (258,454),
+  (282,68),
+  (416,6),
+  (131,375),
+  (135,483),
+  (338,486);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (451,256),
+  (457,73),
+  (63,161),
+  (176,419),
+  (304,128),
+  (31,92),
+  (428,390),
+  (166,148),
+  (461,381),
+  (428,419);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (477,110),
+  (466,19),
+  (206,433),
+  (384,369),
+  (408,263),
+  (204,19),
+  (208,147),
+  (454,127),
+  (418,466),
+  (313,281);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (114,187),
+  (355,158),
+  (484,303),
+  (496,71),
+  (437,249),
+  (408,446),
+  (204,357),
+  (373,112),
+  (418,455),
+  (239,69);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (297,445),
+  (479,321),
+  (386,235),
+  (149,457),
+  (404,190),
+  (217,19),
+  (381,340),
+  (143,345),
+  (66,222),
+  (492,308);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (4,438),
+  (344,48),
+  (288,22),
+  (66,493),
+  (388,331),
+  (383,207),
+  (211,226),
+  (359,294),
+  (469,162),
+  (56,278);
+INSERT INTO `prompt_responses` (`prompt_id`,`responses_id`)
+VALUES
+  (40,345),
+  (113,407),
+  (268,449),
+  (61,489),
+  (282,383),
+  (142,48),
+  (419,279),
+  (107,65),
+  (170,80),
+  (382,351);
