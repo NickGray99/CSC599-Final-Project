@@ -7,10 +7,16 @@ SELECT password, email
 FROM user
 
 -- update user password
-SELECT password
-FROM user
 UPDATE user
 SET password=password
+WHERE user_id=user
+
+-- reset user password when they forget
+UPDATE user
+SET password=SELECT LEFT(MD5(RAND()), 8) --?
+WHERE user_id=user_id
+
+
 
 -- add prompt (month, year, prompt_text, admin_id)
 INSERT INTO prompt VALUES
@@ -37,11 +43,7 @@ set store_location= store_location
 
 
 
-
-
-
-
 -- check history
 SELECT 
 FROM response_history
-
+WHERE user_id=user_id
