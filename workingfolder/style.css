@@ -1,49 +1,55 @@
+ul {
+	list-style-type: none;
+	margin: 0;
+	padding: 0;
+	overflow: hidden;
+	background-color: #333;
+}
 
+li {
+	float: left;
+}
 
-
-.menu-btn {
-	background-color: #040008;
-	color: rgb(216, 21, 21);
-	padding: 16px;
-	font-size: 20px;
-	font-weight: bolder;
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	border: none;
- }
- .dropdown-menu {
-	position: relative;
-	display: inline-block;
- }
- .menu-content {
-	display: none;
-	position: absolute;
-	background-color: #017575;
-	min-width: 160px;
-	z-index: 1;
- }
- nav{
-	background-color: #017575;
- }
- .links,.links-hidden{
-	display: inline-block;
-	color: rgb(255, 255, 255);
-	padding: 12px 16px;
+li a {
+	display: block;
+	color: white;
+	text-align: center;
+	padding: 14px 16px;
 	text-decoration: none;
-	font-size: 18px;
-	font-weight: bold;
- }
+}
+
+.form-Question {
+	align-items: center;
+}
+
+.H1Header {
+	text-align: center;
+	color: rgb(255, 255, 255);
+}
+
+.promptsRemaining {
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: x-large;
+	color: rgb(255, 255, 255);
+}
+
+body {
+	background-image: url("/Users/nickgray/Desktop/Capstone 11:6/workingfolder/Background1.jpg");
+	background-color: #cccccc;
+	background-size: 2000px 1000px;
+  }
+
+.FRGLogo{
+	margin-right: auto;
+	margin-left: auto;
+	display: block;
+}
+
  .links{
 	display: inline-block;
  }
- .links-hidden:hover,.links:hover {
-	background-color: rgb(8, 107, 46);
- }
- .dropdown-menu:hover .menu-content {
-	display: block;
- }
- .dropdown-menu:hover .menu-btn {
-	background-color: #3e8e41;
- }
+
 #main-holder {
 	background-color: #3e8e41;
 }

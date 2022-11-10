@@ -11,14 +11,16 @@
 	</head>
 
     <body>
-		<script class Question>
+		<script>
 			var limit = 10; // Max questions
 			var count = 1; // There is currently 1 question
 			
-			function addQuestion() {
+			function addQuestion()
+			{
 				// Get the quiz form element
 				var quiz = document.getElementById('quiz');
 			
+				// Good to do error checking, make sure we managed to get something
 				if (quiz)
 				{
 					if (count < limit)
