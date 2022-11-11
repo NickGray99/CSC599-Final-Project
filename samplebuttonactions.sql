@@ -47,3 +47,5 @@ set store_location= store_location
 SELECT 
 FROM response_history
 WHERE user_id=user_id
+
+
