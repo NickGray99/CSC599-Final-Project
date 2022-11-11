@@ -252,7 +252,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-$sql="UPDATE user SET (password)=$newrandpass"
+$sql="UPDATE user SET password=$newrandpass"
 
 if ($conn->query($sql) === TRUE) {
   echo "password was successfully reset";
@@ -279,7 +279,7 @@ $conn = new mysqli($servername, $username, $password, $dbname);
 if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
-$sql="UPDATE user SET (password)=$newpass"
+$sql="UPDATE user SET password=$newpass"
 
 if ($conn->query($sql) === TRUE) {
   echo "password was successfully updated";
@@ -298,6 +298,9 @@ $servername = "localhost";
 $username = "username";
 $password = "password";
 $dbname = "frg";
+$first_name="";
+$last_name="";
+$store_location="";
 
 // Create connection
 $conn = new mysqli($servername, $username, $password, $dbname);
@@ -306,8 +309,21 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql="INSERT INTO admin VALUES(first_name, last_name, store_location)";
 
+//need to check this one
+//$sql="INSERT INTO admin (first_name, last_name, store_location)
+//VALUES ('irst_name, $last_name, $store_location)";
 
+$sql="INSERT INTO admin VALUES($first_name, $last_name, $store_location)";
+
+if ($conn->query($sql) === TRUE) {
+  echo "password was successfully updated";
+}
+else{
+  echo "Error with creating admin: " . $sql . "<br>" . $conn->error;
+}
+$conn->close();
+
+?>
 
 
