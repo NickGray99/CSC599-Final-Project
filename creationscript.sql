@@ -16,7 +16,7 @@ CREATE TABLE user(
     last_name CHAR(255)NOT NULL,
     username VARCHAR(255)NOT NULL,
     password VARCHAR(255)NOT NULL,
-    isadmin BOOLEAN NOT NULL,
+    isadmin BOOLEAN NOT NULL, -- maybe remove?
     store_location VARCHAR(255) NOT NULL,   
     admin_id INT NOT NULL,
     PRIMARY KEY (user_id),
