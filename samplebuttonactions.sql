@@ -41,11 +41,12 @@ set store_location= store_location
 
 
 
-
-
 -- check history
 SELECT 
 FROM response_history
 WHERE user_id=user_id
 
+
+--Creating an admin
+INSERT INTO admin VALUES(first_name, last_name, store_location)
 

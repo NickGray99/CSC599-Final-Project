@@ -25,7 +25,6 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sqladmin = 
 
 $sql = "INSERT INTO user VALUES (first_name, last_name, email, password, isadmin, store_location, admin_id)
 VALUES ($first_name, $last_name, $email, $password, FALSE, $store_location, $admin_id)";
@@ -176,7 +175,7 @@ if ($conn->query($sql) === TRUE) {
 
 ?>
 
-need check history still
+
 
 
 
@@ -204,10 +203,111 @@ if ($conn->query($sql) === TRUE) {
 else{
   echo "Error with checking user history: " . $sql . "<br>" . $conn->error;
 }
-
 $conn->close();
 ?>
 
 
+
 <?php
 //check login credentials
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "frg";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+//want to return email and password from username or user_id
+$sql="SELECT $password, $email FROM user WHERE $user_id=$user_id";
+
+if ($conn->query($sql) === TRUE) {
+  echo "Prompt " . $prompt_text " was created successfully";
+}
+else{
+  echo "Error with login credentials: " . $sql . "<br>" . $conn->error;
+}
+$conn->close();
+?>
+
+
+
+
+<?php
+//update password
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "frg";
+
+$newrandpass = SELECT SUBSTR(MD5(RAND()), 1, 8) AS randomString;//email it somehow?
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+$sql="UPDATE user SET (password)=$newrandpass"
+
+if ($conn->query($sql) === TRUE) {
+  echo "password was successfully reset";
+}
+else{
+  echo "Error with updating password: " . $sql . "<br>" . $conn->error;
+}
+$conn->close();
+
+?>
+
+<?php
+//reset password
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "frg";
+
+$newpass = "";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+$sql="UPDATE user SET (password)=$newpass"
+
+if ($conn->query($sql) === TRUE) {
+  echo "password was successfully updated";
+}
+else{
+  echo "Error with updating password: " . $sql . "<br>" . $conn->error;
+}
+$conn->close();
+
+?>
+
+
+<?php
+//create admin
+$servername = "localhost";
+$username = "username";
+$password = "password";
+$dbname = "frg";
+
+// Create connection
+$conn = new mysqli($servername, $username, $password, $dbname);
+// Check connection
+if ($conn->connect_error) {
+  die("Connection failed: " . $conn->connect_error);
+}
+
+$sql="INSERT INTO admin VALUES(first_name, last_name, store_location)";
+
+
+
+
