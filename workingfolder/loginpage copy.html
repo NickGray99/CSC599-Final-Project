@@ -1,30 +1,49 @@
 <!DOCTYPE html>
 <html>
-    <head?
     <html lang="en">
-    
+
     <head>
       <meta charset="UTF-8">
       <meta name="viewport" content="width=device-width, initial-scale=1.0">
       <title>Login</title>
-      <link rel="stylesheet" href="test.css">
+      <link rel="stylesheet" href="style.css">
       <script defer src="login-page.js"></script>
     </head>
-    
-    <body>
+
+<body>
+
+	<!-- Start NavBar HTML -->
+		<div class="navBar">
+			<div class="header">
+			  <img class="FRGLogo" src="/Users/nickgray/Desktop/Capstone 11:6/workingfolder/FlagshipLogo.png" width="250">
+			</div>
+			
+			<ul>
+				  <li><a class="active" href="HomePage.html">Home</a></li>
+				  <li><a href="AccountPage.html">Account</a></li>
+				  <li><a href="History.html">History</a></li>
+				  <li><a href="Prompts.html">Prompts</a></li>
+			  <li><a href="loginpage copy.html">Login</a></li>
+			  </ul>
+
+		  </div>
+	<!-- End NavBar HTML -->
+
+  <!-- Login HTML Start -->
+      <div class="form-holder">
       <main id="main-holder">
         <h1 id="login-header">Login</h1>
-        
-        <div id="login-error-msg-holder">
-          <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
-        </div>
         
         <form id="login-form">
           <input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username">
           <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password">
           <input type="submit" value="Login" id="login-form-submit">
         </form>
-      
+        </main>
+      </div>
+  <!-- Login HTML End -->
+
+  <!-- Login JavaScript Start -->
 <script>
     const loginForm = document.getElementById("login-form");
 const loginButton = document.getElementById("login-form-submit");
@@ -39,11 +58,12 @@ loginButton.addEventListener("click", (e) => {
         alert("You have successfully logged in.");
         location.reload();
     } else {
-        loginErrorMsg.style.opacity = 1;
+        alert("You have entered an incorrect username/password.");
     }
 })
 
 </script>
+<!-- Login JavaScript End -->
 
       </main>
     </body>
