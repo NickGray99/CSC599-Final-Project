@@ -19,7 +19,7 @@
 			<li><a href="AccountPage.html">Account</a></li>
 			<li><a href="History.html">History</a></li>	
 			<li><a href="Prompts.html">Prompts</a></li>
-			<li><a href="loginpage copy.html">Login</a></li>
+			<li><a href="login.php">Login</a></li>
 			<img class="FRGLogo" src="FlagshipLogo.png" width="250">
 		</ul>
 	</div>
@@ -34,7 +34,14 @@
 			<!-- Question -->
 			<div class="form-question">
 				<label for="question" id="prompt-question">
-					
+					<?php
+					while ($row = $result->fetch_assoc()){
+						echo "Prompt: " .
+							$row['prompt_text']. ": " ;
+					}
+				}
+				else{
+					echo "0 results";
 					Question 1: <!--connect database and link up the questions from adminprompts to php-->
 
 				</label>

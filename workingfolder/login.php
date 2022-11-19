@@ -109,7 +109,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			<li><a href="AccountPage.html">Account</a></li>
 			<li><a href="History.html">History</a></li>	
 			<li><a href="Prompts.html">Prompts</a></li>
-			<li><a href="loginpage copy.html">Login</a></li>
+			<li><a href="login.php">Login</a></li>
 			<img class="FRGLogo" src="FlagshipLogo.png" width="250">
 		</ul>
 	</div>
@@ -130,7 +130,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </form>
         </main>
       </div>
-  <!-- Login HTML End -->
+  <!-- Login HTML End -->}
 
       </main>
     </body>
