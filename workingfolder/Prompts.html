@@ -25,10 +25,11 @@
 	</div>
 	<!-- End NavBar HTML -->
 
+	<div class="questionsWrapper">
 	<!-- Questionaire HTML Start -->
 		<h1 class="H1Header">Monthly Questionaire</h1>
 	  
-		<form id="prompt-form">
+		<form id="prompt-form" action="/mock data + creation scripts/add_response.php" method="post">
 
 			<!-- Question -->
 			<div class="form-question">
@@ -41,13 +42,13 @@
 				</textarea>
 			</div>
 
+
 	  
 			<!-- Submit button -->
-			<button onclick = "window.location.href = Prompts.html" type="submit" value="submit">
-				Submit
-			</button>
+			<input type="submit" value="Submit">
 		</form>
 		<!-- Questionaire HTML End -->
+	</div>
 
 	<!-- Questionaire JavaScript Start -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
