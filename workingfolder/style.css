@@ -36,7 +36,7 @@ li a {
 .navBar {
 	width: 100%;
 	height: min-content;
-	background-color: rgb(35, 31, 32);s
+	background-color: rgb(35, 31, 32);
 }
 
 li:hover {
@@ -46,9 +46,18 @@ li:hover {
 .NavButtons {
 	position: relative;
 }
+
+.links{
+	display: inline-block;
+ }
 /* End NavBar CSS */
 
+/* Start Questions CSS */
 
+.questionsWrapper{
+	padding: 5%;
+	margin: 5%;
+}
 
 .form-Question {
 	align-items: center;
@@ -59,12 +68,34 @@ li:hover {
 	color: rgb(255, 255, 255);
 }
 
-.promptsRemaining {
-	text-align: center;
-	font-family: Arial, Helvetica, sans-serif;
-	font-size: x-large;
-	color: rgb(255, 255, 255);
+
+
+#login-form {
+	display: block;
+	margin-left: auto;
+	margin-right: auto;
+	width: 40%;
 }
+
+
+
+#promptText {
+	background-color: #040948;
+	color: rgb(216, 251, 21);
+	padding: 16px;
+	font-size: 20px;
+	font-weight: bold;
+	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+	border: none;
+}
+
+#prompt-form {
+	text-align: center;
+}
+
+/* End Questions CSS */
+
+/* Start Body CSS */
 
 body {
 	background-image: url("Background1.jpg");
@@ -73,12 +104,6 @@ body {
 	border: none;
 	font-family: 'Poppins', sans-serif;
   }
-
-
-
- .links{
-	display: inline-block;
- }
 
 #main-holder {
 	background-color: rgb(255, 255, 255);
@@ -94,11 +119,21 @@ body {
 	text-align: center;
 }
 
-#login-form {
-	display: block;
-	margin-left: auto;
-	margin-right: auto;
-	width: 40%;
+/* End Body CSS */
+
+/* Specific HomePage.html CSS */
+
+.promptsRemainingWrapper {
+	background: rgb(255, 255, 255);
+	padding: 5%;
+	margin: 5%;
+}
+
+.promptsRemaining {
+	text-align: center;
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: x-large;
+	color: rgb(0, 0, 0);
 }
 
 #promptsRemaining {
@@ -107,16 +142,4 @@ body {
 	background-color: #3e8e42;
 }
 
-#promptText {
-	background-color: #040948;
-	color: rgb(216, 251, 21);
-	padding: 16px;
-	font-size: 20px;
-	font-weight: bold;
-	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-	border: none;
-}
-
-#prompt-form {
-	text-align: center;
-}
+/* END HomePage.html CSS */

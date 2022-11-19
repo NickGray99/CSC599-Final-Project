@@ -134,10 +134,10 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "UPDATE user set $store_location = $store_location"
+$sql = "UPDATE user set $store_location = $store_location";
 
 if ($conn->query($sql) === TRUE) {
-  echo "Prompt " . $prompt_text " was created successfully";
+  echo "Prompt " . $prompt_text . " was created successfully";
 }
 else{
   echo "Error with updating user store location: " . $sql . "<br>" . $conn->error;
@@ -164,7 +164,7 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "INSERT INTO responses values($response_text, $user_id, $response_history_id"
+$sql = "INSERT INTO responses values($response_text, $user_id, $response_history_id";
 
 if ($conn->query($sql) === TRUE) {
     echo "New response was created successfully";
@@ -198,7 +198,7 @@ if ($conn->connect_error) {
 $sql = "SELECT * FROM $response_history WHERE $user_id = $user_id";
 
 if ($conn->query($sql) === TRUE) {
-  echo "Prompt " . $prompt_text " was created successfully";
+  echo "Prompt " . $prompt_text . " was created successfully";
 }
 else{
   echo "Error with checking user history: " . $sql . "<br>" . $conn->error;
@@ -327,3 +327,50 @@ $conn->close();
 ?>
 
 
+<?php 
+session_start(); 
+include "db_conn.php";
+if (isset($_POST['uname']) && isset($_POST['password'])) {
+    function validate($data){
+       $data = trim($data);
+       $data = stripslashes($data);
+       $data = htmlspecialchars($data);
+       return $data;
+    }
+    $uname = validate($_POST['uname']);
+    $pass = validate($_POST['password']);
+    if (empty($uname)) {
+        header("Location: index.php?error=User Name is required");
+        exit();
+    }else if(empty($pass)){
+        header("Location: index.php?error=Password is required");
+        exit();
+    }else{
+        $sql = "SELECT * FROM users WHERE user_name='$uname' AND password='$pass'";
+        $result = mysqli_query($conn, $sql);
+        if (mysqli_num_rows($result) === 1) {
+            $row = mysqli_fetch_assoc($result);
+            if ($row['user_name'] === $uname && $row['password'] === $pass) {
+                echo "Logged in!";
+                $_SESSION['user_name'] = $row['user_name'];
+                $_SESSION['name'] = $row['name'];
+                $_SESSION['id'] = $row['id'];
+                header("Location: home.php");
+                exit();
+            }else{
+                header("Location: index.php?error=Incorect User name or password");
+                exit();
+            }
+        }else{
+            header("Location: index.php?error=Incorect User name or password");
+            exit();
+        }
+    }
+
+}else{
+
+    header("Location: index.php");
+
+    exit();
+
+}
