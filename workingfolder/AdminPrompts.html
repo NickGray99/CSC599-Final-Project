@@ -3,31 +3,26 @@
 	<head>
 		<meta charset="utf-8">
 		<title>Create Prompt Forms</title>
-		<link rel="stylesheet" type="text/css" href="Final.css">
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<!--link rel="stylesheet" type="text/css" href="accountPage.css"-->
 		<link rel="preconnect" href="https://fonts.googleapis.com">
 		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-		<link href="https://fonts.googleapis.com/css2?family=Oswald:wght@500&display=swap" rel="stylesheet">
 		<script src="mainPage.js"></script>
 	</head>
 
     <body>
 
 	<!-- Start NavBar HTML -->
-		<div class="navBar">
-			<div class="header">
-			  <img class="FRGLogo" src="/Users/nickgray/Desktop/Capstone 11:6/workingfolder/FlagshipLogo.png" width="250">
-			</div>
-			
-			<ul>
-				  <li><a class="active" href="HomePage.html">Home</a></li>
-				  <li><a href="AccountPage.html">Account</a></li>
-				  <li><a href="History.html">History</a></li>
-				  <li><a href="Prompts.html">Prompts</a></li>
-			  <li><a href="loginpage copy.html">Login</a></li>
-			  </ul>
-		
-
-		  </div>
+	<div class="navBar">
+		<ul>
+			<li><a href="HomePage.html">Home</a></li>
+			<li><a href="AccountPage.html">Account</a></li>
+			<li><a href="History.html">History</a></li>	
+			<li><a href="Prompts.html">Prompts</a></li>
+			<li><a href="loginpage copy.html">Login</a></li>
+			<img class="FRGLogo" src="/Users/nickgray/Desktop/Capstone 11:6/workingfolder/FlagshipLogo.png" width="250">
+		</ul>
+	</div>
 	<!-- End NavBar HTML -->
 
 	<!-- Admin Updates Prompt JavaScript + Submit Method Start -->
@@ -74,12 +69,12 @@
 			</script>
 			
 			<form id="quiz" action="" method="POST">
-			
-				<input type="button" value="Add question" onclick="javascript: addQuestion();"/>
-			
 				<p>Question 1</p>
 				<input type="text" name="questions[]"/>
 				<p></p>
+				<input type="button" value="Add question" onclick="javascript: addQuestion();"/>
+			
+				
 			
 			
 			</form>

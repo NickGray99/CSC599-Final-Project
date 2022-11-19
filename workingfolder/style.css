@@ -1,3 +1,10 @@
+
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
 /* Start NavBar CSS */
 
 ul {
@@ -20,18 +27,15 @@ li a {
 }
 
 .FRGLogo{
-	margin-right: auto;
-	margin-left: auto;
+	margin-left: 55%;
 	display: block;
 	padding: 10px;
+	position:static;
 }
 
 .navBar {
 	width: 100%;
 	height: min-content;
-	margin: 0%;
-	padding: 0%;
-	border: 0%;
 	background-color: rgb(35, 31, 32);s
 }
 
@@ -39,6 +43,9 @@ li:hover {
 	background: #333;
 }
 
+.NavButtons {
+	position: relative;
+}
 /* End NavBar CSS */
 
 
@@ -108,10 +115,5 @@ body {
 	font-weight: bold;
 	font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	border: none;
-}
-
-#prompt-form{
-	text-align: center;
-
 }
  
