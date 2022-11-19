@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="utf-8">
+		<title>Prompts</title>
+		<link rel="stylesheet" type="text/css" href="style.css">
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link rel="stylesheet" type="text/css" href="accountPage.css">
+		<script src="mainPage.js"></script>
+	</head>
+
+	<body>
+
+	<!-- Start NavBar HTML -->
+	<div class="navBar">
+		<ul>
+			<li><a href="HomePage.html">Home</a></li>
+			<li><a href="AccountPage.html">Account</a></li>
+			<li><a href="History.html">History</a></li>	
+			<li><a href="Prompts.html">Prompts</a></li>
+			<li><a href="loginpage copy.html">Login</a></li>
+			<img class="FRGLogo" src="FlagshipLogo.png" width="250">
+		</ul>
+	</div>
+	<!-- End NavBar HTML -->
+
+	<!-- Questionaire HTML Start -->
+		<h1 class="H1Header">Monthly Questionaire</h1>
+	  
+		<form id="prompt-form">
+
+			<!-- Question -->
+			<div class="form-question">
+				<label for="question" id="prompt-question">
+					Question 1: <!--Insert question 1 from admin prompt entry-->
+				</label>
+				<br>
+				<textarea name="prompt-answer-textbox" id="prompt-answer"
+					placeholder="Enter your answer here...">
+				</textarea>
+			</div>
+
+	  
+			<!-- Submit button -->
+			<button onclick = "window.location.href = Prompts.html" type="submit" value="submit">
+				Submit
+			</button>
+		</form>
+		<!-- Questionaire HTML End -->
+
+	<!-- Questionaire JavaScript Start -->
+	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+	<!-- Questionaire JavaScript End -->
+</body>
+</html>
