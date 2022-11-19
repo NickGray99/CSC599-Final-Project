@@ -54,11 +54,6 @@ li:hover {
 
 /* Start Questions CSS */
 
-.questionsWrapper{
-	padding: 5%;
-	margin: 5%;
-}
-
 .form-Question {
 	align-items: center;
 }
@@ -68,16 +63,12 @@ li:hover {
 	color: rgb(255, 255, 255);
 }
 
-
-
 #login-form {
 	display: block;
 	margin-left: auto;
 	margin-right: auto;
 	width: 40%;
 }
-
-
 
 #promptText {
 	background-color: #040948;
@@ -105,16 +96,6 @@ body {
 	font-family: 'Poppins', sans-serif;
   }
 
-#main-holder {
-	background-color: rgb(255, 255, 255);
-	width: 20%;
-	height: 70%;
-	margin-top: 20%;
-	margin-left: auto;
-	margin-right: auto;
-	border-radius: 25px;
-}
-
 #login-header {
 	text-align: center;
 }
@@ -124,7 +105,8 @@ body {
 /* Specific HomePage.html CSS */
 
 .promptsRemainingWrapper {
-	background: rgb(255, 255, 255);
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 25px;
 	padding: 5%;
 	margin: 5%;
 }
@@ -143,3 +125,28 @@ body {
 }
 
 /* END HomePage.html CSS */
+
+/* Specific Prompts.html CSS */
+
+.questionsWrapper{
+	padding: 5%;
+	margin: 5%;
+	background-color: rgba(255, 255, 255, 0.5);
+	border-radius: 25px;
+}
+
+/* End Prompts.html CSS */
+
+/* Specific loginpage copy.php CSS */
+
+#form-holder {
+	background-color: rgba(255, 255, 255, 0.5);
+	width: 20%;
+	height: 70%;
+	margin-top: 20%;
+	margin-left: auto;
+	margin-right: auto;
+	border-radius: 25px;
+}
+
+/* End loginpage copy.php CSS */

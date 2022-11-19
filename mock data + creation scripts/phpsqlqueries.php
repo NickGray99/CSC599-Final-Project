@@ -226,7 +226,7 @@ if ($conn->connect_error) {
 $sql="SELECT $password, $email FROM user WHERE $user_id=$user_id";
 
 if ($conn->query($sql) === TRUE) {
-  echo "Prompt " . $prompt_text " was created successfully";
+  echo "Password for " . $username . " is " . $password;
 }
 else{
   echo "Error with login credentials: " . $sql . "<br>" . $conn->error;

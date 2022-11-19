@@ -1,5 +1,5 @@
 <?php
-//checking history
+//creating prompt
 $servername = "localhost";
 $username = "username";
 $password = "password";
@@ -12,13 +12,13 @@ if ($conn->connect_error) {
   die("Connection failed: " . $conn->connect_error);
 }
 
-$sql = "SELECT prompt_text FROM prompt WHERE $prompt_id = $prompt_id";
+$sql = "INSERT INTO prompt VALUES ($month, $year, $prompt_text, $admin_id)";
 
 if ($conn->query($sql) === TRUE) {
-  echo "Prompt " . $prompt_text . " was created successfully";
+  echo "New Prompt ". $prompt_text ." was created successfully";
 }
 else{
-  echo "Error with checking user history: " . $sql . "<br>" . $conn->error;
+  echo "Error with creating prompt: " . $sql . "<br>" . $conn->error;
 }
-$conn->close();
+$conn->close()
 ?>
