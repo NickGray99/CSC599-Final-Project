@@ -1,0 +1,13 @@
+localStorage.setItem("user_id", user_id)
+localStorage.getItem("user_id")
+
+localStorage.setItem("admin_id", admin_id)
+localStorage.getItem("admin_id")
+
+
+we can store user/admin ids between webpages 
+so they don't have to sign in more than once
+
+need to check user_id, if its false redirect them to the login page
+
+logout button = localStorage.clear();
