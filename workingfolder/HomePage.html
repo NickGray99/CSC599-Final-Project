@@ -18,7 +18,11 @@
 			<li><a href="AccountPage.html">Account</a></li>
 			<li><a href="History.html">History</a></li>	
 			<li><a href="Prompts.html">Prompts</a></li>
-			<li><a href="login.php">Login</a></li>
+			<?php if(USERLOGINTRUE) : ?>
+				<li><a href="logout.php">Logout</a></li>
+			<?php elseif(USERLOGINFALSE) : ?>
+				<li><a href="login.php">Login</a></li>
+			<?php endif; ?>
 			<img class="FRGLogo" src="FlagshipLogo.png" width="250">
 		</ul>
 	</div>
@@ -27,8 +31,8 @@
 	<!-- PromptsRemaining HTML Start -->
 	<div class="promptsRemainingWrapper">
 	<p class="promptsRemaining">
-		<p class="promptsRemaining">Welcome, ________</p> <!--email address--> <!--Call php get or something like that-->
-		<p class="promptsRemaining">You have ___ unanswered questions<!--# of unanswered questions--> for the month of ___ <!--add month--> 
+		<p class="promptsRemaining">Welcome, <?php echo $_SESSION['name']; ?></p> <!--email address--> <!--Call php get or something like that-->
+		<p class="promptsRemaining">You have <?php echo $_SESSION['promptsRemaining']; ?> unanswered questions<!--# of unanswered questions--> for the month of <?php echo $_SESSION['month']; ?> <!--add month--> 
 	</p>
 	</div>
 	<!-- PromptsRemaining HTML END -->
