@@ -47,6 +47,7 @@
 				else{
 					echo "0 results";
 					Question 1: <!--connect database and link up the questions from adminprompts to php-->
+					<!--after submission of all the questions, need to have submission page confirmation-->
 
 				</label>
 				<br>
@@ -54,11 +55,29 @@
 					placeholder="Enter your answer here...">
 				</textarea>
 			</div>
-
-
+			<input type="button" onclick="myFunction()" value="Submit form">
+		</form>
 	  
 			<!-- Submit button -->
-			<input type="submit" value="Submit">
+		<input type="button" onclick="myFunction" value="Submit form">
+
+		<p id="demo"></p>
+
+		<script>
+		function myFunction() {
+  		let text = "Do you want to submit form?\nEither OK or Cancel.";
+  		if (confirm(text) == true) {
+    		text = "You pressed OK!";
+  		}	 
+		else {
+    		text = "You canceled!";
+  		}
+  		document.getElementById("demo").innerHTML = text;
+		}
+
+		</script>
+
+		<!-- <a href="#" onclick="document.getElementById('prompt-form').submit();"> submit </a> -->	
 		</form>
 		<!-- Questionaire HTML End -->
 	</div>
