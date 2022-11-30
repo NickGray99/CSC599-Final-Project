@@ -59,26 +59,23 @@
 		</form>
 	  
 			<!-- Submit button -->
-		<input type="button" onclick="myFunction" value="Submit form">
-
-		<p id="demo"></p>
-
+		<input type="button" onclick="myFunction" value="Submit">
+		
+		<p id="user-confirmation"></p>
 		<script>
 		function myFunction() {
-  		let text = "Do you want to submit form?\nEither OK or Cancel.";
-  		if (confirm(text) == true) {
-    		text = "You pressed OK!";
-  		}	 
-		else {
-    		text = "You canceled!";
+			var txt;
+			if (confirm("Do you want to submit?")){
+				document.getElementById('prompt-form').submit();
+				txt = "Thank you for submitting your answers! You may now exit the page";
+			}
+			else{
+				txt = "Cancelled";
+			}
+			document.getElementById("user-confirmation").innerHTML = txt;
+			//location.href = "SubmissionPage.html";
   		}
-  		document.getElementById("demo").innerHTML = text;
-		}
-
 		</script>
-
-		<!-- <a href="#" onclick="document.getElementById('prompt-form').submit();"> submit </a> -->	
-		</form>
 		<!-- Questionaire HTML End -->
 	</div>
 

@@ -35,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate credentials
     if(empty($email_err) && empty($password_err)){
         // Prepare a select statement
-        $sql = "SELECT user_id, first_name, last_name, email, is_admin, store_location FROM users WHERE email = ?";
+        $sql = "SELECT user_id, first_name, last_name, email, is_admin, store_location FROM user WHERE email = ?";
         
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
@@ -52,9 +52,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 // Check if email exists, if yes then verify password
                 if($stmt->num_rows == 1){                    
                     // Bind result variables
-                    $stmt->bind_result($user_id, $email, $hashed_password);
+                    $stmt->bind_result($user_id, $email, $password);
                     if($stmt->fetch()){
-                        if(password_verify($password, $hashed_password)){
+                        if(password_verify($password, $password)){
                             // Password is correct, so start a new session
                             session_start();
                             
@@ -64,7 +64,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["email"] = $email;                            
                             
                             // Redirect user to welcome page
-                            header("location: welcome.php");
+                            header("location: HomePage.php");
                         } else{
                             // Password is not valid, display a generic error message
                             $login_err = "Invalid email or password.";
@@ -86,7 +86,6 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Close connection
     $mysqli->close();
 }
-?>
 ?>
 <!DOCTYPE html>
 <html>
@@ -119,7 +118,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
   <!-- Login HTML Start -->
       <div class="form-holder">
         <h1 id="login-header">Login</h1>
-        
+
         <form id="login-form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
           <input type="text" name="username" id="username-field" placeholder="Username"
             class="login-form-field <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">

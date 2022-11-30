@@ -1,13 +1,10 @@
-localStorage.setItem("user_id", user_id)
-localStorage.getItem("user_id")
+https://stackoverflow.com/questions/15090785/redirecting-to-a-new-page-after-successful-login
+get login page working 
+    figure out php bullshit and if it is working or not.
+    if logged in, redirect to home page
 
-localStorage.setItem("admin_id", admin_id)
-localStorage.getItem("admin_id")
+
+make all other webpagese work
 
 
-we can store user/admin ids between webpages 
-so they don't have to sign in more than once
-
-need to check user_id, if its false redirect them to the login page
-
-logout button = localStorage.clear();
+https://www.geeksforgeeks.org/how-to-make-a-redirect-in-php/
