@@ -87,9 +87,16 @@
 		
 			<script>
 				function submitForm() {
-					alert("Questions are created!");
-					document.getElementById('create-quiz').submit();
-				}
+					var txt;
+					if (confirm("Do you want to submit?")){
+						alert("Questions are created");
+						document.getElementById('create-quiz').submit();
+						location.href = "SubmissionPage.html";
+					}
+					else{
+						alert("Cancelled");
+					}
+  				}
 			</script>
 		</div>
 	<!-- Account Settings and Password Change End -->

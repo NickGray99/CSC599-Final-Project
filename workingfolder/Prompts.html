@@ -62,16 +62,15 @@
 		<p id="user-confirmation"></p>
 		<script>
 		function myFunction() {
-			var txt;
 			if (confirm("Do you want to submit?")){
-				txt = "Thank you for submitting your answers! You may now exit the page";
+				//txt = "Thank you for submitting your answers! You may now exit the page";
 				document.getElementById('prompt-form').submit();
 				location.href = "SubmissionPage.html";
+				alert("Thank you for submitting your answers! You may now exit the page")
 			}
 			else{
-				txt = "Cancelled";
+				alert("Cancelled");
 			}
-			document.getElementById("user-confirmation").innerHTML = txt;
   		}
 		</script>
 		<!-- Questionaire HTML End -->
