@@ -66,12 +66,12 @@
 			if (confirm("Do you want to submit?")){
 				txt = "Thank you for submitting your answers! You may now exit the page";
 				document.getElementById('prompt-form').submit();
+				location.href = "SubmissionPage.html";
 			}
 			else{
 				txt = "Cancelled";
 			}
 			document.getElementById("user-confirmation").innerHTML = txt;
-			location.href = "SubmissionPage.html";
   		}
 		</script>
 		<!-- Questionaire HTML End -->
