@@ -32,7 +32,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 				<li><a href="logout.php">Logout</a></li>
 			<?php elseif(USERLOGINFALSE) : ?>
 				<li><a href="login.php">Login</a></li>
-			<?php endif; ?>
+			<?php endif; ?>	
 			<img class="FRGLogo" src="FlagshipLogo.png" width="250">
 		</ul>
 	</div>

@@ -35,7 +35,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     // Validate credentials
     if(empty($email_err) && empty($password_err)){
         // Prepare a select statement
-        $sql = "SELECT user_id, first_name, last_name, email, is_admin, store_location FROM user WHERE email = ?";
+        $sql = "SELECT user_id, first_name, last_name, email, password, is_admin, store_location FROM user WHERE email = ?";
         
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
@@ -105,10 +105,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 	<!-- Start NavBar HTML -->
 	<div class="navBar">
 		<ul>
-			<li><a href="HomePage.html">Home</a></li>
-			<li><a href="AccountPage.html">Account</a></li>
-			<li><a href="History.html">History</a></li>	
-			<li><a href="Prompts.html">Prompts</a></li>
+			<li><a href="HomePage.php">Home</a></li>
+			<li><a href="AccountPage.php">Account</a></li>
+			<li><a href="History.php">History</a></li>	
+			<li><a href="Prompts.php">Prompts</a></li>
 			<li><a href="login.php">Login</a></li>
 			<img class="FRGLogo" src="FlagshipLogo.png" width="250">
 		</ul>
@@ -120,9 +120,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <h1 id="login-header">Login</h1>
 
         <form id="login-form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-          <input type="text" name="username" id="username-field" placeholder="Username"
-            class="login-form-field <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-            <span class="invalid-feedback"><?php echo $username_err; ?></span>
+          <input type="text" name="username" id="username-field" placeholder="Email"
+            class="login-form-field <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>">
+            <span class="invalid-feedback"><?php echo $email_err; ?></span>
           <input type="password" name="password" id="password-field" placeholder="Password" class="login-form-field  
           <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
             <span class="invalid-feedback"><?php echo $password_err; ?></span>
