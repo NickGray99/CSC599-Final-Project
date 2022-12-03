@@ -6,7 +6,7 @@ require_once "config.php";
 $username = $password = $confirm_password = $firstname= $lastname= $storelocation="";
 $username_err = $password_err = $confirm_password_err = "";
 
- 
+
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
  
@@ -69,7 +69,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         
         // Prepare an insert statement
         $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
-         
+// EDIT HERE         
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
             $stmt->bind_param("ss", $param_username, $param_password);
@@ -77,7 +77,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
             // Set parameters
             $param_username = $username;
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
-            
+            $param_firstname
+            $param_lastname
+            $param_storelocation
             // Attempt to execute the prepared statement
             if($stmt->execute()){
                 // Redirect to login page
