@@ -29,9 +29,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 			<li><a href="AccountPage.php">Account</a></li>
 			<li><a href="History.php">History</a></li>	
 			<li><a href="Prompts.php">Prompts</a></li>
-			<?php if(USERLOGINTRUE) : ?>
+			<?php if($loggedin == true) : ?>
 				<li><a href="logout.php">Logout</a></li>
-			<?php elseif(USERLOGINFALSE) : ?>
+			<?php elseif($loggedin == false) : ?>
 				<li><a href="login.php">Login</a></li>
 			<?php endif; ?>
 			<img class="FRGLogo" src="FlagshipLogo.png" width="250">
