@@ -39,26 +39,27 @@
 				// Get the quiz form element
 				var quiz = document.getElementById('quiz');
 			
+				// Good to do error checking, make sure we managed to get something
 				if (quiz)
 				{
 					if (count < limit)
 					{
-						// Create a new paragraph
+						// Create a new <p> element
 						var newP = document.createElement('p');
 						newP.innerHTML = 'Question ' + (count + 1);
 			
-						// Create a new text box
+						// Create the new text box
 						var newInput = document.createElement('input');
 						newInput.type = 'text';
 						newInput.name = 'questions[]';
 			
-						// if there is a new paragraph and input textbox
+						// Good practice to do error checking
 						if (newInput && newP)   
 						{
 							// Add the new elements to the form
 							quiz.appendChild(newP);
 							quiz.appendChild(newInput);
-							// Increment count
+							// Increment the count
 							count++;
 						}
 			
@@ -70,23 +71,27 @@
 				}
 			}
 			</script>
+			<input type="button" value="Add question" onclick="javascript: addQuestion();"/>
+		
 			<div class="promptQuestions"></div>
-			<form id="create-quiz" action="/mock data + creation scripts/createPrompt.php" method="post">
+			<form id="quiz" action="/mock data + creation scripts/createPrompt.php" method="post">
 				<p>Question 1</p>
 				<input type="text" name="questions[]" placeholder="Enter text here: "/>
 				<p></p>
-				<input type="button" value="Add question" onclick="javascript: addQuestion();"/>
+			
+		
+			
 			</form>
-
-			<p></p>
 			<input type="button" onclick="submitForm" value="Submit form">
-
+		
+		
 			<script>
 				function submitForm() {
 					document.getElementById('create-quiz').submit();
 					alert("Questions are created!");
 				}
 			</script>
+		
 	<!-- Account Settings and Password Change End -->
 			</body>
     <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>
