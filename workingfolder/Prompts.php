@@ -77,8 +77,14 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 						newInput.type = 'text';
 						newInput.name = 'userquestions[]';
 
-						userprompts.appendChild(newP);
-						userprompts.appendChild(newInput);
+						if (newP && newInput){
+							userprompts.appendChild(newP);
+							userprompts.appendChild(newInput);
+						}
+						else{
+							alert("no more questions");
+						}
+					
 					}
 					</script>
 				<textarea name="prompt-answer-textbox" id="prompt-answer"
