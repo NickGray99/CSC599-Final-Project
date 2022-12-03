@@ -62,6 +62,25 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 				?>
 				</label>
 				<br>
+				<script>
+					//var table = document.getElementById("question");
+					//var rows = table.rows.length;
+					var userprompts = document.getElementById('userprompts');
+					var numOfRows = document.querySelectorAll('.prompt-form > .row').length;
+					for (int i = 0; i < numOfRows; i++){
+						//estabishing the question number
+						var newP = document.createElement('p');
+						newP.innerHTML = 'Question ' + (i);
+
+						//creating an empty texbox for user to write in answer
+						var newInput = document.createElement('input');
+						newInput.type = 'text';
+						newInput.name = 'userquestions[]';
+
+						userprompts.appendChild(newP);
+						userprompts.appendChild(newInput);
+					}
+					</script>
 				<textarea name="prompt-answer-textbox" id="prompt-answer"
 					placeholder="Enter your answer here...">
 				</textarea>
