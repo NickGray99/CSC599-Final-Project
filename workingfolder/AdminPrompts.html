@@ -73,7 +73,7 @@
 			</script>
 			<input type="button" value="Add question" onclick="javascript: addQuestion();"/>
 		
-			<div class="promptQuestions">  </div>
+			<div class="promptQuestions"></div>
 			<form id="quiz" action="/mock data + creation scripts/createPrompt.php" method="post">
 				<p>Question 1</p>
 				<input type="text" name="questions[]" placeholder="Enter text here: "/>
@@ -82,13 +82,12 @@
 		
 			
 			</form>
-			<input type="button" onclick="submitForm" value="Submit form">
-		
+			<input type="button" value="Submit form" onclick="javascript: submitForm();"/>
 		
 			<script>
 				function submitForm() {
-					document.getElementById('create-quiz').submit();
 					alert("Questions are created!");
+					document.getElementById('create-quiz').submit();
 				}
 			</script>
 		
