@@ -53,7 +53,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 						echo "Prompt: " .
 							$row['prompt_text']. ": " ;
 					}	
-				}
+	
 				else{
 					echo "0 results";
 					Question 1: <!--connect database and link up the questions from adminprompts to php-->
