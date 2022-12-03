@@ -1,10 +1,10 @@
 <?php
 // Initialize the session
 session_start();
- // https://www.tutorialrepublic.com/php-tutorial/php-mysql-login-system.php
+ 
 // Check if the user is already logged in, if yes then redirect him to welcome page
 if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
-    header("location: HomePage.php");
+    header("location: welcome.php");
     exit;
 }
  
@@ -12,17 +12,17 @@ if(isset($_SESSION["loggedin"]) && $_SESSION["loggedin"] === true){
 require_once "config.php";
  
 // Define variables and initialize with empty values
-$email = $password = "";
-$email_err = $password_err = $login_err = "";
+$username = $password = "";
+$username_err = $password_err = $login_err = "";
  
 // Processing form data when form is submitted
 if($_SERVER["REQUEST_METHOD"] == "POST"){
  
-    // Check if email is empty
-    if(empty(trim($_POST["email"]))){
-        $email_err = "Please enter email.";
+    // Check if username is empty
+    if(empty(trim($_POST["username"]))){
+        $username_err = "Please enter username.";
     } else{
-        $email = trim($_POST["email"]);
+        $username = trim($_POST["username"]);
     }
     
     // Check if password is empty
@@ -33,46 +33,46 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     }
     
     // Validate credentials
-    if(empty($email_err) && empty($password_err)){
+    if(empty($username_err) && empty($password_err)){
         // Prepare a select statement
-        $sql = "SELECT user_id, first_name, last_name, email, password, is_admin, store_location FROM user WHERE email = ?";
+        $sql = "SELECT id, username, password FROM users WHERE username = ?";
         
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
-            $stmt->bind_param("s", $param_email);
+            $stmt->bind_param("s", $param_username);
             
             // Set parameters
-            $param_email = $email;
+            $param_username = $username;
             
             // Attempt to execute the prepared statement
             if($stmt->execute()){
                 // Store result
                 $stmt->store_result();
                 
-                // Check if email exists, if yes then verify password
+                // Check if username exists, if yes then verify password
                 if($stmt->num_rows == 1){                    
                     // Bind result variables
-                    $stmt->bind_result($user_id, $email, $password);
+                    $stmt->bind_result($id, $username, $hashed_password);
                     if($stmt->fetch()){
-                        if(password_verify($password, $password)){
+                        if(password_verify($password, $hashed_password)){
                             // Password is correct, so start a new session
                             session_start();
                             
                             // Store data in session variables
                             $_SESSION["loggedin"] = true;
-                            $_SESSION["user_id"] = $user_id;
-                            $_SESSION["email"] = $email;                            
+                            $_SESSION["id"] = $id;
+                            $_SESSION["username"] = $username;                            
                             
                             // Redirect user to welcome page
-                            header("location: HomePage.php");
+                            header("location: welcome.php");
                         } else{
                             // Password is not valid, display a generic error message
-                            $login_err = "Invalid email or password.";
+                            $login_err = "Invalid username or password.";
                         }
                     }
                 } else{
-                    // Email doesn't exist, display a generic error message
-                    $login_err = "Invalid email or password.";
+                    // Username doesn't exist, display a generic error message
+                    $login_err = "Invalid username or password.";
                 }
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
@@ -124,9 +124,9 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         <h1 id="login-header">Login</h1>
 
         <form id="login-form" method="post" action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>">
-          <input type="text" name="username" id="username-field" placeholder="Email"
-            class="login-form-field <?php echo (!empty($email_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $email; ?>">
-            <span class="invalid-feedback"><?php echo $email_err; ?></span>
+          <input type="text" name="username" id="username-field" placeholder="username"
+            class="login-form-field <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
+            <span class="invalid-feedback"><?php echo $username_err; ?></span>
           <input type="password" name="password" id="password-field" placeholder="Password" class="login-form-field  
           <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>">
             <span class="invalid-feedback"><?php echo $password_err; ?></span>
