@@ -21,6 +21,7 @@
   		<a href="">Invite Page</a>
   		<a href="">Admin Map</a>
   		<a href="">User Info (Admin)</a>
+		<a href="">Admin Prompts</a>
 	</div>
 
 <?php
