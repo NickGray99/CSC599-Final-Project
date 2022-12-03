@@ -14,7 +14,7 @@ CREATE TABLE user(
 	user_id INT NOT NULL AUTO_INCREMENT,
     first_name CHAR(255) NOT NULL,
     last_name CHAR(255)NOT NULL,
-    email VARCHAR(255)NOT NULL,
+    username VARCHAR(255)NOT NULL UNIQUE,
     password VARCHAR(255)NOT NULL,
     isadmin BOOLEAN NOT NULL, -- maybe remove?
     store_location VARCHAR(255) NOT NULL,   

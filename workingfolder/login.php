@@ -109,7 +109,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 			<li><a href="AccountPage.php">Account</a></li>
 			<li><a href="History.php">History</a></li>	
 			<li><a href="Prompts.php">Prompts</a></li>
-			<li><a href="login.php">Login</a></li>
+			<?php if($loggedin == true) : ?>
+				<li><a href="logout.php">Logout</a></li>
+			<?php elseif($loggedin == false) : ?>
+				<li><a href="login.php">Login</a></li>
+			<?php endif; ?>
 			<img class="FRGLogo" src="FlagshipLogo.png" width="250">
 		</ul>
 	</div>

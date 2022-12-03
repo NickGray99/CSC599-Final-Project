@@ -3,7 +3,8 @@
 require_once "config.php";
  
 // Define variables and initialize with empty values
-$username = $password = $confirm_password = $firstname= $lastname= $storelocation="";
+$username = $password = $confirm_password = 
+$firstname= $lastname= $storelocation=$admin_id="";
 $username_err = $password_err = $confirm_password_err = "";
 
 
@@ -68,22 +69,25 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     if(empty($username_err) && empty($password_err) && empty($confirm_password_err)){
         
         // Prepare an insert statement
-        $sql = "INSERT INTO users (username, password) VALUES (?, ?)";
+        $sql = "INSERT INTO users (username, password, first_name, last_name, store_location, admin_id) VALUES (?, ?, ?, ?, ?, ?)";
 // EDIT HERE         
         if($stmt = $mysqli->prepare($sql)){
             // Bind variables to the prepared statement as parameters
-            $stmt->bind_param("ss", $param_username, $param_password);
+            $stmt->bind_param("ss", $param_username, $param_password, 
+            $param_firstname, $param_lastname, $param_storelocation, $param_admin_id);
             
             // Set parameters
             $param_username = $username;
             $param_password = password_hash($password, PASSWORD_DEFAULT); // Creates a password hash
-            $param_firstname
-            $param_lastname
-            $param_storelocation
+            $param_firstname= "testfirst";
+            $param_lastname= "testlast";
+            $param_storelocation = "teststore";
+            $param_admin_id="1";
             // Attempt to execute the prepared statement
             if($stmt->execute()){
                 // Redirect to login page
-                header("location: login.php");
+                header("location: register.php");
+                echo "New user created successfully";
             } else{
                 echo "Oops! Something went wrong. Please try again later.";
             }
@@ -119,21 +123,23 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
                 <span class="invalid-feedback"><?php echo $username_err; ?></span>
             </div>    
+            <!--
             <div class="form-group">
                 <label>First Name</label>
-                <input type="text" name="firstname" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-                <span class="invalid-feedback"><?php echo $username_err; ?></span>
+                <input type="text" name="firstname" class="form-control <?php echo (!empty($first_name_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $first_name; ?>">
+                <span class="invalid-feedback"><?php echo $first_name_err; ?></span>
             </div>  
             <div class="form-group">
                 <label>Last Name</label>
-                <input type="text" name="lastname" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-                <span class="invalid-feedback"><?php echo $username_err; ?></span>
+                <input type="text" name="lastname" class="form-control <?php echo (!empty($last_name_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $last_name; ?>">
+                <span class="invalid-feedback"><?php echo $last_name_err; ?></span>
             </div> 
             <div class="form-group">
                 <label>Store Location</label>
-                <input type="text" name="storelocation" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
-                <span class="invalid-feedback"><?php echo $username_err; ?></span>
+                <input type="text" name="storelocation" class="form-control <?php echo (!empty($store_location_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $store_location; ?>">
+                <span class="invalid-feedback"><?php echo $store_location_err; ?></span>
             </div>   
+            -->
             <div class="form-group">
                 <label>Password</label>
                 <input type="password" name="password" class="form-control <?php echo (!empty($password_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $password; ?>">
@@ -148,6 +154,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                 <input type="submit" class="btn btn-primary" value="Submit">
                 <input type="reset" class="btn btn-secondary ml-2" value="Reset">
             </div>
+
 
         </form>
     </div>    
