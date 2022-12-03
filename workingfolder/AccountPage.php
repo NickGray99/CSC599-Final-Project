@@ -24,10 +24,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 	<!-- Start NavBar HTML -->
 	<div class="navBar">
 		<ul>
-			<li><a href="HomePage.html">Home</a></li>
-			<li><a href="AccountPage.html">Account</a></li>
-			<li><a href="History.html">History</a></li>	
-			<li><a href="Prompts.html">Prompts</a></li>
+			<li><a href="HomePage.php">Home</a></li>
+			<li><a href="AccountPage.php">Account</a></li>
+			<li><a href="History.php">History</a></li>	
+			<li><a href="Prompts.php">Prompts</a></li>
 			<?php if(USERLOGINTRUE) : ?>
 				<li><a href="logout.php">Logout</a></li>
 			<?php elseif(USERLOGINFALSE) : ?>
