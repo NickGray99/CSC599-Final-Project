@@ -7,6 +7,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
     header("location: login.php");
     exit;
 }
+
+require_once "config.php";
+
 ?>
 <!DOCTYPE html>
 <html>
@@ -37,6 +40,20 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 		</ul>
 	</div>
 	<!-- End NavBar HTML -->
+
+
+	<?php
+    $response_text = $response_id = $response_err = "";
+
+    if ($_SERVER["REQUEST_METHOD"] == "POST") {
+	    $sql = "SELECT response_id FROM responses WHERE response_text = ?";
+	    if (empty(trim($_POST["response_text"]))) {
+		    $response_err = "Please enter a response.";
+	    } else {
+		    $response_text = trim($_POST["response_text"]);
+	    }
+    }
+	?>
 
 	<div class="questionsWrapper">
 	<!-- Questionaire HTML Start -->
