@@ -30,11 +30,12 @@ li a {
 	margin-left: 57%;
 	display: block;
 	padding: 10px;
-	position:static;
+	position:auto;
 }
 
 .navBar {
-	width: 100%;
+	width: auto;
+    length: auto;
 	height: min-content;
 	background-color: rgb(35, 31, 32);
 }

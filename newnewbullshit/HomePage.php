@@ -30,7 +30,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 			<li><a href="AccountPage.php">Account</a></li>
 			<li><a href="History.php">History</a></li>	
 			<li><a href="Prompts.php">Prompts</a></li>
-            <li><a href="AdminPrompts.php"</a></li>
+            <?php if($_SESSION["isadmin"]==1): ?>
+                <li><a href="AdminPrompts.php">Admin Prompts</a></li>
+            <?php endif; ?>
 			<?php if($loggedin == true) : ?>
 				<li><a href="logout.php">Logout</a></li>
 			<?php elseif($loggedin == false) : ?>
@@ -44,7 +46,7 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 	<!-- PromptsRemaining HTML Start -->
 	<div class="promptsRemainingWrapper">
 	<p class="promptsRemaining">
-		<p class="promptsRemaining">Welcome, <b><?php echo htmlspecialchars($_SESSION["first_name"] +$_SESSION["last_name"]) ; ?></b> </p>
+		<p class="promptsRemaining">Welcome, <?php echo htmlspecialchars($_SESSION["first_name"])  ; ?> <?php echo htmlspecialchars($_SESSION["last_name"]) ; ?></p>
 		<p class="promptsRemaining">You have <?php echo $_SESSION['promptsRemaining']; ?> unanswered questions<!--# of unanswered questions--> for the month of <?php echo $_SESSION['month']; ?> <!--add month--> 
 	</p>
 	
@@ -53,3 +55,4 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 
 </body>
 </html>
+

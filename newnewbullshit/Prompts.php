@@ -29,6 +29,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 			<li><a href="AccountPage.php">Account</a></li>
 			<li><a href="History.php">History</a></li>	
 			<li><a href="Prompts.php">Prompts</a></li>
+            <?php if($_SESSION["isadmin"]==1): ?>
+                <li><a href="AdminPrompts.php">Admin Prompts</a></li>
+            <?php endif; ?>
 			<?php if($loggedin == true) : ?>
 				<li><a href="logout.php">Logout</a></li>
 			<?php elseif($loggedin == false) : ?>
@@ -42,12 +45,15 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 	<div class="questionsWrapper">
 	<!-- Questionaire HTML Start -->
 		<h1 class="H1Header">Monthly Questionaire</h1>
-	  
+        
+	    
 		<form id="prompt-form" action="/mock data + creation scripts/add_response.php" method="post">
+        
 
 			<!-- Question -->
 			<div class="form-question">
 				<label for="question" id="prompt-question">
+                 <p class="promptsRemaining">Prompt: <b><?php echo $row["prompt_text"]; ?></b> </p>
 					<?php
 					while ($row = $result->fetch_assoc()){
 						echo "Prompt: " .

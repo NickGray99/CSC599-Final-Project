@@ -4,7 +4,7 @@ session_start();
  
 // Check if the user is logged in, if not then redirect him to login page
 if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
-    header("location: login.php");
+    header("location: logout.php");
     exit;
 }
 ?>
@@ -28,6 +28,9 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 			<li><a href="AccountPage.php">Account</a></li>
 			<li><a href="History.php">History</a></li>	
 			<li><a href="Prompts.php">Prompts</a></li>
+            <?php if($_SESSION["isadmin"]==1): ?>
+                <li><a href="AdminPrompts.php">Admin Prompts</a></li>
+            <?php endif; ?>
 			<?php if($loggedin == true) : ?>
 				<li><a href="logout.php">Logout</a></li>
 			<?php elseif($loggedin == false) : ?>
@@ -41,15 +44,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 <!-- Account Settings and Password Change Start -->
 <div class="wrapper bg-white mt-sm-5">
     <h4 class="pb-4 border-bottom">Account settings</h4>
-    <div class="d-flex align-items-start py-3 border-bottom">
-        <img src="https://images.pexels.com/photos/1037995/pexels-photo-1037995.jpeg?auto=compress&cs=tinysrgb&dpr=1&w=500"
-            class="img" alt="">
-        <div class="pl-sm-4 pl-2" id="img-section">
-            <b>Profile Photo</b>
-            <p>Accepted file type .png. Less than 1MB</p>
-            <button class="btn button border"><b>Upload</b></button>
-        </div>
-    </div>
     <div class="py-2">
         <div class="row py-2">
             <div class="col-md-6">
