@@ -22,11 +22,7 @@
             <?php if($_SESSION["isadmin"]==1): ?>
                 <li><a href="AdminPrompts.php">Admin Prompts</a></li>
             <?php endif; ?>
-			<?php if($loggedin == true) : ?>
-				<li><a href="logout.php">Logout</a></li>
-			<?php elseif($loggedin == false) : ?>
-				<li><a href="login.php">Login</a></li>
-			<?php endif; ?>
+            <li><a href="logout.php">Logout</a></li>
 			<img class="FRGLogo" src="FlagshipLogo.png" width="250">
 		</ul>
 	</div>

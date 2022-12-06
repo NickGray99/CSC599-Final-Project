@@ -1,4 +1,3 @@
-<<<<<<< HEAD
 <?php
 // Initialize the session
 session_start();
@@ -66,7 +65,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["username"] = $username;
                             $_SESSION["isadmin"] = $isadmin;   
                             $_SESSION["first_name"] = $first_name;
-                            $_SESSION["last_name"] = $last_name;               
+                            $_SESSION["last_name"] = $last_name;              
                             
                             // Redirect user to welcome page
                             header("location: welcome.php");
