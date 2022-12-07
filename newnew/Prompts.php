@@ -40,6 +40,38 @@ require_once "config.php";
 		</ul>
 	</div>
 	<!-- End NavBar HTML -->
+	<?php
+   $dbhost = 'epiz_33128756_frg';
+   $dbuser = 'epiz_33128756';
+   $dbpass = 'pwfTqbAV2TI0x';
+   
+   $conn = mysql_connect($dbhost, $dbuser, $dbpass);
+   
+   if(! $conn ) {
+      die('Could not connect: ' . mysql_error());
+   }
+   
+   $sql = 'SELECT response_text, FROM responses';
+   mysql_select_db('test_db');
+   $retval = mysql_query( $sql, $conn );
+   
+   if(! $retval ) {
+      die('Could not get data: ' . mysql_error());
+   }
+   
+   while($row = mysql_fetch_array($retval, MYSQL_ASSOC)) {
+      echo "EMP ID :{$row['emp_id']}  <br> ".
+         "EMP NAME : {$row['emp_name']} <br> ".
+         "EMP SALARY : {$row['emp_salary']} <br> ".
+         "--------------------------------<br>";
+   }
+   
+   echo "Fetched data successfully\n";
+   
+   mysql_close($conn);
+?>
+
+
 
 
 	<?php
@@ -81,7 +113,7 @@ require_once "config.php";
 				?>
 				</label>
 				<br>
-				<script>
+				<!--<script>
 					//var table = document.getElementById("question");
 					//var rows = table.rows.length;
 					var userprompts = document.getElementById('userprompts');
@@ -109,7 +141,7 @@ require_once "config.php";
 				<textarea name="prompt-answer-textbox" id="prompt-answer"
 					placeholder="Enter your answer here...">
 				</textarea>
-			</div>
+			</div> -->
 			<!-- Submit button -->
 			<input type="button" onclick="myFunction()" value="Submit form">
 		</form>
