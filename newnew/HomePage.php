@@ -33,17 +33,22 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
             <?php if($_SESSION["isadmin"]==1): ?>
                 <li><a href="AdminPrompts.php">Admin Prompts</a></li>
             <?php endif; ?>
-			<li><a href="logout.php">Logout</a></li>
-			<img class="FRGLogo" src="FlagshipLogo.png" width="250">
+            <li><a href="logout.php">Logout</a></li>
 		</ul>
+            <div class="imgWrapper">
+            <img class="FRGLogo" src="FlagshipLogo.png" width="250">
+            </div>
 	</div>
 	<!-- End NavBar HTML -->
 
 	<!-- PromptsRemaining HTML Start -->
 	<div class="promptsRemainingWrapper">
 	<p class="promptsRemaining">
-		<p class="promptsRemaining">Welcome, <?php echo htmlspecialchars($_SESSION["first_name"])  ; ?> <?php echo htmlspecialchars($_SESSION["last_name"]) ; ?></p>
-		<p class="promptsRemaining">You have <?php echo $_SESSION['promptsRemaining']; ?> unanswered questions<!--# of unanswered questions--> for the month of <?php echo $_SESSION['month']; ?> <!--add month--> 
+		<p class="promptsRemaining">Welcome back, <?php echo htmlspecialchars($_SESSION["first_name"])  ; ?> <?php echo htmlspecialchars($_SESSION["last_name"]) ; ?></p>
+                <?php if($_SESSION["isadmin"]==0): ?>
+                <p class="promptsRemaining">You have <?php echo $_SESSION['promptsRemaining']; ?> unanswered questions<!--# of unanswered questions--> for the month of <?php echo $_SESSION['month']; ?>
+            <?php endif; ?>
+		 <!--add month--> 
 	</p>
 	
 	</div>

@@ -19,18 +19,18 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     if ($first_name = "") {
         $first_name = $_SESSION["first_name"];
     } else {
-        $first_name = trim($_POST["first_name"]);
+        $first_name = '$_POST["first_name"]';
     }
     if ($last_name = "") {
         $last_name = $_SESSION["last_name"];
     } else {
-        $last_name = trim($_POST["last_name"]);
+        $last_name = '$_POST["last_name"]';
     }
     $id = $_SESSION["id"];
     // Attempt update query execution
     $sql = "UPDATE user 
-    SET first_name = '$first_name',
-    last_name='$last_name'
+    SET first_name = $first_name,
+    last_name=$last_name
     WHERE user_id=$id";
 
     if ($mysqli->query($sql) === true) {

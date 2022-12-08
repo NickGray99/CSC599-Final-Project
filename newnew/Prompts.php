@@ -9,7 +9,6 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
 }
 
 require_once "config.php";
-
 ?>
 <!DOCTYPE html>
 <html>
@@ -36,132 +35,45 @@ require_once "config.php";
                 <li><a href="AdminPrompts.php">Admin Prompts</a></li>
             <?php endif; ?>
             <li><a href="logout.php">Logout</a></li>
-			<img class="FRGLogo" src="FlagshipLogo.png" width="250">
 		</ul>
+            <div class="imgWrapper">
+            <img class="FRGLogo" src="FlagshipLogo.png" width="250">
+            </div>
 	</div>
 	<!-- End NavBar HTML -->
-	<?php
-   $dbhost = 'epiz_33128756_frg';
-   $dbuser = 'epiz_33128756';
-   $dbpass = 'pwfTqbAV2TI0x';
-   
-   $conn = mysql_connect($dbhost, $dbuser, $dbpass);
-   
-   if(! $conn ) {
-      die('Could not connect: ' . mysql_error());
-   }
-   
-   $sql = 'SELECT response_text, FROM responses';
-   mysql_select_db('test_db');
-   $retval = mysql_query( $sql, $conn );
-   
-   if(! $retval ) {
-      die('Could not get data: ' . mysql_error());
-   }
-   
-   while($row = mysql_fetch_array($retval, MYSQL_ASSOC)) {
-      echo "EMP ID :{$row['emp_id']}  <br> ".
-         "EMP NAME : {$row['emp_name']} <br> ".
-         "EMP SALARY : {$row['emp_salary']} <br> ".
-         "--------------------------------<br>";
-   }
-   
-   echo "Fetched data successfully\n";
-   
-   mysql_close($conn);
-?>
 
-
-
-
-	<?php
-    $response_text = $response_id = $response_err = "";
-
-    if ($_SERVER["REQUEST_METHOD"] == "POST") {
-	    $sql = "SELECT response_id FROM responses WHERE response_text = ?";
-	    if (empty(trim($_POST["response_text"]))) {
-		    $response_err = "Please enter a response.";
-	    } else {
-		    $response_text = trim($_POST["response_text"]);
-	    }
-    }
-	?>
 
 	<div class="questionsWrapper">
 	<!-- Questionaire HTML Start -->
 		<h1 class="H1Header">Monthly Questionaire</h1>
+
+        <form id="prompt-form" action="/SubmissionPage.php" method="post">
+        <?php
+            $dbhost = 'sql313.epizy.com';
+            $dbuser = 'epiz_33128756';
+            $dbpass = 'pwfTqbAV2TI0x';
+   
+            $conn = mysql_connect($dbhost, $dbuser, $dbpass);
+            $sql = 'SELECT prompt_text FROM prompt';
+            mysql_select_db('epiz_33128756_frg');
+            $retval = mysql_query( $sql, $conn );
+            if(! $retval ) {
+                die('Could not get data: ' . mysql_error());
+            }
         
-	    
-		<form id="prompt-form" action="/mock data + creation scripts/add_response.php" method="post">
-        
+            while($row = mysql_fetch_assoc($retval)) {
+                echo "Question :{$row['prompt_text']}  <br> ";
+                echo '<textarea class="box">'.$response.'</textarea> <br>';
+                echo "--------------------------------<br>";
+            }
+            mysql_close($conn);
 
-			<!-- Question -->
-			<div class="form-question">
-				<label for="question" id="prompt-question">
-                 <p class="promptsRemaining">Prompt: <b><?php echo $row["prompt_text"]; ?></b> </p>
-					<?php
-					while ($row = $result->fetch_assoc()){
-						echo "Prompt: " .
-							$row['prompt_text']. ": " ;
-					}	
-					?>
-				//else{
-					//echo "0 results";
-					Question 1: <!--connect database and link up the questions from adminprompts to php-->
-					<!--after submission of all the questions, need to have submission page confirmation-->
-				//}
-				?>
-				</label>
-				<br>
-				<!--<script>
-					//var table = document.getElementById("question");
-					//var rows = table.rows.length;
-					var userprompts = document.getElementById('userprompts');
-					var numOfRows = document.querySelectorAll('.prompt-form > .row').length;
-					for (int i = 0; i < numOfRows; i++){
-						//estabishing the question number
-						var newP = document.createElement('p');
-						newP.innerHTML = 'Question ' + (i);
+            
+        ?>
+            <br><br>
+            <input class="subButton" type = "submit" name = "submit" value = "Submit">
 
-						//creating an empty texbox for user to write in answer
-						var newInput = document.createElement('input');
-						newInput.type = 'text';
-						newInput.name = 'userquestions[]';
-
-						if (newP && newInput){
-							userprompts.appendChild(newP);
-							userprompts.appendChild(newInput);
-						}
-						else{
-							alert("no more questions");
-						}
-					
-					}
-					</script>
-				<textarea name="prompt-answer-textbox" id="prompt-answer"
-					placeholder="Enter your answer here...">
-				</textarea>
-			</div> -->
-			<!-- Submit button -->
-			<input type="button" onclick="myFunction()" value="Submit form">
-		</form>
-	  
-		<p id="user-confirmation"></p>
-		<script>
-		function myFunction() {
-			if (confirm("Do you want to submit?")){
-				//txt = "Thank you for submitting your answers! You may now exit the page";
-				document.getElementById('prompt-form').submit();
-				location.href = "SubmissionPage.html";
-				alert("Thank you for submitting your answers! You may now exit the page")
-			}
-			else{
-				alert("Cancelled");
-			}
-  		}
-		</script>
-		<!-- Questionaire HTML End -->
-	</div>
+        </form>
 
 	<!-- Questionaire JavaScript Start -->
 	<script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"></script>

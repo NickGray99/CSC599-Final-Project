@@ -65,10 +65,10 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
                             $_SESSION["username"] = $username;
                             $_SESSION["isadmin"] = $isadmin;   
                             $_SESSION["first_name"] = $first_name;
-                            $_SESSION["last_name"] = $last_name;              
+                            $_SESSION["last_name"] = $last_name;               
                             
                             // Redirect user to welcome page
-                            header("location: welcome.php");
+                            header("location: HomePage.php");
                         } else{
                             // Password is not valid, display a generic error message
                             $login_err = "Invalid username or password.";
@@ -97,6 +97,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="UTF-8">
     <title>Login</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="accountPage.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="mainPage.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body{ font: 14px sans-serif; }
@@ -104,6 +109,27 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </style>
 </head>
 <body>
+
+	<div class="navBar">
+		<ul>
+			<li><a href="HomePage.php">Home</a></li>
+			<li><a href="AccountPage.php">Account</a></li>
+			<li><a href="History.php">History</a></li>	
+			<li><a href="Prompts.php">Prompts</a></li>
+            <?php if($_SESSION["isadmin"]==1): ?>
+                <li><a href="AdminPrompts.php">Admin Prompts</a></li>
+            <?php endif; ?>
+			<?php if($loggedin == true) : ?>
+				<li><a href="logout.php">Logout</a></li>
+			<?php elseif($loggedin == false) : ?>
+				<li><a href="login.php">Login</a></li>
+			<?php endif; ?>	
+		</ul>
+            <div class="imgWrapper">
+            <img class="FRGLogo" src="FlagshipLogo.png" width="250">
+            </div>
+	</div>
+
     <div class="wrapper">
         <h2>Login</h2>
         <p>Please fill in your credentials to login.</p>
@@ -115,6 +141,7 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         ?>
 
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
+        <div class="promptsRemaingingWrapper">
             <div class="form-group">
                 <label>Username</label>
                 <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
@@ -132,3 +159,4 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
         </form>
     </div>
 </body>
+</html>

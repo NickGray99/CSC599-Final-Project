@@ -100,6 +100,11 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
 <head>
     <meta charset="UTF-8">
     <title>Sign Up</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" type="text/css" href="accountPage.css">
+	<link rel="preconnect" href="https://fonts.googleapis.com">
+	<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <script src="mainPage.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <style>
         body{ font: 14px sans-serif; }
@@ -107,12 +112,28 @@ if($_SERVER["REQUEST_METHOD"] == "POST"){
     </style>
 </head>
 <body>
-    <div class="wrapper">
+	<div class="navBar">
+		<ul>
+			<li><a href="HomePage.php">Home</a></li>
+			<li><a href="AccountPage.php">Account</a></li>
+			<li><a href="History.php">History</a></li>	
+			<li><a href="Prompts.php">Prompts</a></li>
+            <?php if($_SESSION["isadmin"]==1): ?>
+                <li><a href="AdminPrompts.php">Admin Prompts</a></li>
+            <?php endif; ?>
+            <li><a href="logout.php">Logout</a></li>
+		</ul>
+            <div class="imgWrapper">
+            <img class="FRGLogo" src="FlagshipLogo.png" width="250">
+            </div>
+	</div>
+
+    <div class="promptsRemainingWrapper">
         <h2>Sign Up for some bullshit</h2>
         <p>Please fill this form to create an account.</p>
         <form action="<?php echo htmlspecialchars($_SERVER["PHP_SELF"]); ?>" method="post">
             <div class="form-group">
-                <label>`Username`</label>
+                <label>Username</label>
                 <input type="text" name="username" class="form-control <?php echo (!empty($username_err)) ? 'is-invalid' : ''; ?>" value="<?php echo $username; ?>">
                 <span class="invalid-feedback"><?php echo $username_err; ?></span>
             </div>    

@@ -31,8 +31,10 @@ if(!isset($_SESSION["loggedin"]) || $_SESSION["loggedin"] !== true){
                 <li><a href="AdminPrompts.php">Admin Prompts</a></li>
             <?php endif; ?>
             <li><a href="logout.php">Logout</a></li>
-			<img class="FRGLogo" src="FlagshipLogo.png" width="250">
 		</ul>
+            <div class="imgWrapper">
+            <img class="FRGLogo" src="FlagshipLogo.png" width="250">
+            </div>
 	</div>
 	<!-- End NavBar HTML -->
 
